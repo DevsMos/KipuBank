@@ -1,0 +1,234 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_bankCap",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "ExceedsBankCapacity",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ExceedsWithdrawalLimit",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InsufficientBalance",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "TransferFailed",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdrawal",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "WITHDRAWAL_LIMIT",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "bankCap",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"details": "Contrato para um banco simples com limite de capacidade",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Constructor que define o limite máximo do banco",
+					"params": {
+						"_bankCap": "Limite máximo de ETH que o banco pode armazenar"
+					}
+				},
+				"deposit()": {
+					"details": "Função para realizar depósito de ETH"
+				},
+				"getBalance(address)": {
+					"details": "Função para consultar saldo do usuário",
+					"params": {
+						"_user": "Endereço do usuário"
+					},
+					"returns": {
+						"_0": "Saldo do usuário"
+					}
+				},
+				"getTotalBalance()": {
+					"details": "Função para consultar saldo total do contrato",
+					"returns": {
+						"_0": "Saldo total do contrato"
+					}
+				},
+				"withdraw(uint256)": {
+					"details": "Função para realizar saque de ETH",
+					"params": {
+						"_amount": "Valor a ser sacado"
+					}
+				}
+			},
+			"title": "KipuBank",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"KipuBank.sol": "KipuBank"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"KipuBank.sol": {
+			"keccak256": "0x52c4863d9e0b765d4dc5446aff5d35915c5b457950d10e1dcf3276dd5d8317d8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://613d1ca3d4cec389038646653b5b8c20fcfe1f303517b57d126fbc2c21478aff",
+				"dweb:/ipfs/QmW6LS15ADtUa8McikBN17AfFV5a7SkbcRiJy6wXRL2wVv"
+			]
+		}
+	},
+	"version": 1
+}
